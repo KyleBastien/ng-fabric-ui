@@ -118,13 +118,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "fabric-ui",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "fabric-ui",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

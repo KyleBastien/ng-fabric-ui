@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { FabricLabelModule } from './lib/label/label.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FabricLabelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
