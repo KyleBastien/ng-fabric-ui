@@ -4,22 +4,13 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
-    customContextFile: 'config/karma-context.html',
-    files: [
-      { pattern: 'src/test.ts', watched: false }
-    ],
-    preprocessors: {
-      'src/test.ts': ['webpack', 'sourcemap'],
-    },
-    webpack: require('./webpack.config.test'),
+    frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('karma-webpack'),
-      require('karma-sourcemap-loader')
+      require('@angular/cli/plugins/karma')
     ],
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -29,11 +20,7 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     angularCli: {
-      environment: 'dev',
-      codeCoverage: 'true'
-    },
-    mime: {
-      'text/x-typescript': ['ts', 'tsx']
+      environment: 'dev'
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,

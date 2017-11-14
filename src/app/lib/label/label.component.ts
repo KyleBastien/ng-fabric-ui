@@ -27,16 +27,13 @@ export class FabricLabelComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const hostElement = this.hostRef.nativeElement;
     const content = hostElement.innerText;
-    const LabelPage = () => (
-      <Fabric>
-        <Label
-          disabled={ this.disabled }
-          required={ this.required }>
-          { content }
-        </Label>
-      </Fabric>
+    const LabelPage = React.createElement(Fabric, {},
+      React.createElement(Label, {
+        disabled: this.disabled,
+        required: this.required
+      }, content)
     );
-    ReactDOM.render(<LabelPage />, hostElement);
+    ReactDOM.render(LabelPage, hostElement);
   }
 
 }
