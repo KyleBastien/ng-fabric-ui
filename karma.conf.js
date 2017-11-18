@@ -30,8 +30,8 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     customLaunchers: {
       Chrome_no_sandbox: {
-        base: 'Chrome',
-        flags: ['--no-sandbox', '--disable-setuid-sandbox'] // for running within Docker
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'] // for running within Docker
       }
     },
     singleRun: false
