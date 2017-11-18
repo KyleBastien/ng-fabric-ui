@@ -1,27 +1,61 @@
-# NgFabricUi
+# ng-fabric-ui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+[![CircleCI](https://circleci.com/gh/KyleMcNutt/ng-fabric-ui.svg?style=svg)](https://circleci.com/gh/KyleMcNutt/ng-fabric-ui)
+[![codecov](https://codecov.io/gh/KyleMcNutt/ng-fabric-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/KyleMcNutt/ng-fabric-ui)
 
-## Development server
+This is an Angular Component library built by re-using the [Fabric UI React Components](https://github.com/OfficeDev/office-ui-fabric-react).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Currently this library is in it's early stages of development, but I hope to have support for every Fabric Component as some point.
 
-## Code scaffolding
+Current Component Support:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+| Component | Support |
+| --- | --- |
+| ActivityItem |  |
+| Breadcrumb |  |
+| Button |  |
+| Calendar |  |
+| Callout |  |
+| Checkbox |  |
+| ChoiceGroup |  |
+| ColorPicker |  |
+| ComboBox |  |
+| CommandBar |  |
+| ContextualMenu |  |
+| DetailsList |  |
+| Dialog |  |
+| DocumentCard |  |
+| Dropdown |  |
+| Facepile |  |
+| GroupedList |  |
+| HoverCard |  |
+| Icon |  |
+| Image |  |
+| Label | :heavy_check_mark: |
+| Layer |  |
+| Link |  |
+| List |  |
+| MessageBar |  |
+| Modal |  |
+| Nav |  |
+| OverflowSet |  |
+| Overlay |  |
+| Panel |  |
+| Persona |  |
+| Pickers |  |
+| PeoplePicker |  |
+| Pivot |  |
+| ProgressIndicator |  |
+| Rating |  |
+| ResizeGroup |  |
+| ScrollablePane |  |
+| SearchBox |  |
+| Slider |  |
+| Spinner |  |
+| SpinButton |  |
+| SwatchColorPicker |  |
+| TeachingBubble |  |
+| TextField |  |
+| Toggle |  |
+| Tooltip |  |
+| Utilities |  |
