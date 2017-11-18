@@ -108,4 +108,39 @@ describe('FabricLabelComponent', () => {
 
     expect(debugElement.nativeElement.querySelector('label').outerHTML).not.toContain('root-35');
   });
+
+  it('should not call to render if changes contains no updates', () => {
+    spyOn((FabricLabelComponent.prototype as any), 'render').and.callThrough();
+
+    component.ngOnChanges({});
+
+    expect((FabricLabelComponent.prototype as any).render).not.toHaveBeenCalled();
+  });
+
+  it('should not call to render if this is the first change for all properties', () => {
+    spyOn((FabricLabelComponent.prototype as any), 'render').and.callThrough();
+
+    component.ngOnChanges({
+      content: new SimpleChange(null, component.content, true),
+      disabled: new SimpleChange(null, component.disabled, true),
+      required: new SimpleChange(null, component.required, true),
+    });
+
+    expect((FabricLabelComponent.prototype as any).render).not.toHaveBeenCalled();
+  });
+
+  it('should not call to render if this is the current value equals the previous value for all properties', () => {
+    spyOn((FabricLabelComponent.prototype as any), 'render').and.callThrough();
+    component.content = 'FooBar';
+    component.disabled = true;
+    component.required = true;
+
+    component.ngOnChanges({
+      content: new SimpleChange(component.content, component.content, true),
+      disabled: new SimpleChange(component.disabled, component.disabled, true),
+      required: new SimpleChange(component.required, component.required, true),
+    });
+
+    expect((FabricLabelComponent.prototype as any).render).not.toHaveBeenCalled();
+  });
 });
