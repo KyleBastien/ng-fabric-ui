@@ -33,8 +33,8 @@ export class FabricLabelComponent implements AfterViewInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     Object.keys(changes).some((prop) => {
       const change = changes[prop];
-      if (!changes[prop].isFirstChange() &&
-        changes[prop].currentValue !== changes[prop].previousValue) {
+      if (!change.isFirstChange() &&
+        change.currentValue !== change.previousValue) {
         this.render();
         // We only need to call render once, since that will pick up
         // all changes from the Inputs. This exists the some loop by
