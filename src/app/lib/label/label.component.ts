@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit, ElementRef, Input } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, Input, ChangeDetectionStrategy,
+  OnChanges, SimpleChanges } from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Label } from 'office-ui-fabric-react/lib/Label';
@@ -7,11 +8,12 @@ import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
 @Component({
   selector: 'fabric-ui-label',
   template: `
-    <ng-content></ng-content>
+    <div></div>
   `,
-  styles: [``]
+  styles: [``],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FabricLabelComponent implements OnInit, AfterViewInit {
+export class FabricLabelComponent implements AfterViewInit, OnChanges {
 
   @Input()
   public disabled: boolean;
@@ -19,19 +21,36 @@ export class FabricLabelComponent implements OnInit, AfterViewInit {
   @Input()
   public required: boolean;
 
+  @Input()
+  public content = '';
+
   constructor(private hostRef: ElementRef) { }
 
-  ngOnInit() {
+  ngAfterViewInit(): void {
+    this.render();
   }
 
-  ngAfterViewInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    Object.keys(changes).some((prop) => {
+      const change = changes[prop];
+      if (!changes[prop].isFirstChange() &&
+        changes[prop].currentValue !== changes[prop].previousValue) {
+        this.render();
+        // We only need to call render once, since that will pick up
+        // all changes from the Inputs. This exists the some loop by
+        // returning true.
+        return true;
+      }
+    });
+  }
+
+  private render() {
     const hostElement = this.hostRef.nativeElement;
-    const content = hostElement.innerText;
     const LabelPage = React.createElement(Fabric, {},
       React.createElement(Label, {
         disabled: this.disabled,
         required: this.required
-      }, content)
+      }, this.content)
     );
     ReactDOM.render(LabelPage, hostElement);
   }

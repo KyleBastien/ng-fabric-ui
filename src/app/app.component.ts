@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  disabled = true;
+  required = true;
+  labelContent = 'I\'m a Label';
 }
