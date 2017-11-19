@@ -136,9 +136,9 @@ describe('FabricLabelComponent', () => {
     component.required = true;
 
     component.ngOnChanges({
-      content: new SimpleChange(component.content, component.content, true),
-      disabled: new SimpleChange(component.disabled, component.disabled, true),
-      required: new SimpleChange(component.required, component.required, true),
+      content: new SimpleChange(component.content, component.content, false),
+      disabled: new SimpleChange(component.disabled, component.disabled, false),
+      required: new SimpleChange(component.required, component.required, false),
     });
 
     expect((FabricLabelComponent.prototype as any).render).not.toHaveBeenCalled();
