@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ElementRef, Input, ChangeDetectionStrategy,
-  OnChanges, SimpleChanges } from '@angular/core';
+  OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Label } from 'office-ui-fabric-react/lib/Label';
@@ -11,7 +11,8 @@ import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
     <div></div>
   `,
   styles: [``],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class FabricLabelComponent implements AfterViewInit, OnChanges {
 
