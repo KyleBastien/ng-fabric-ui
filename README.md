@@ -53,7 +53,7 @@ Current Component Support:
 | ScrollablePane |  |
 | SearchBox |  |
 | Slider |  |
-| Spinner |  |
+| Spinner | :heavy_check_mark: |
 | SpinButton |  |
 | SwatchColorPicker |  |
 | TeachingBubble |  |
