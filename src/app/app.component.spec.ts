@@ -1,13 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { FabricLabelComponent } from './lib/label/label.component';
+import { FabricSpinnerComponent } from './lib/spinner/spinner.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        FabricLabelComponent
+        FabricLabelComponent,
+        FabricSpinnerComponent
       ],
     }).compileComponents();
   }));

@@ -1,12 +1,20 @@
-import { Component, AfterViewInit, ElementRef, Input, ChangeDetectionStrategy,
-  OnChanges, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewEncapsulation,
+} from '@angular/core';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 
 @Component({
-  selector: 'fabric-ui-label',
+  selector: 'fabric-ui-spinner',
   template: `
     <div></div>
   `,
@@ -14,16 +22,13 @@ import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None
 })
-export class FabricLabelComponent implements AfterViewInit, OnChanges {
+export class FabricSpinnerComponent implements AfterViewInit, OnChanges {
 
   @Input()
-  public disabled: boolean;
+  public label: string;
 
   @Input()
-  public required: boolean;
-
-  @Input()
-  public content = '';
+  public size: SpinnerSize;
 
   constructor(private hostRef: ElementRef) { }
 
@@ -47,13 +52,12 @@ export class FabricLabelComponent implements AfterViewInit, OnChanges {
 
   private render() {
     const hostElement = this.hostRef.nativeElement;
-    const LabelPage = React.createElement(Fabric, {},
-      React.createElement(Label, {
-        disabled: this.disabled,
-        required: this.required
-      }, this.content)
+    const SpinnerPage = React.createElement(Fabric, {},
+      React.createElement(Spinner, {
+        label: this.label,
+        size: this.size,
+      })
     );
-    ReactDOM.render(LabelPage, hostElement);
+    ReactDOM.render(SpinnerPage, hostElement);
   }
-
 }
