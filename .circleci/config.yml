@@ -31,3 +31,5 @@ jobs:
       - run: yarn run test
 
       - run: bash <(curl -s https://codecov.io/bash)
+
+      - run: yarn run lint
