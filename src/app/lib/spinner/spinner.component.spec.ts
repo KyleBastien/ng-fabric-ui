@@ -1,4 +1,3 @@
-import { By } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FabricSpinnerComponent } from './spinner.component';
 import { SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
