@@ -13,8 +13,6 @@ jobs:
     steps:
       - checkout
 
-      - run: ng --version
-
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -28,6 +26,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: ng --version
 
       # run tests!
       - run: yarn run test:library
