@@ -6,8 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test --browsers Chrome_no_sandbox --watch=false --code-coverage",
-    "test:library": "ng test ng-fabric-ui --browsers Chrome_no_sandbox --watch=false --code-coverage",
+    "test": "ng test --browsers=Chrome_no_sandbox --watch=false --code-coverage",
+    "test:library": "ng test ng-fabric-ui --browsers=Chrome_no_sandbox --watch=false --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
