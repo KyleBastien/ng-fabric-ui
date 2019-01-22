@@ -25,6 +25,7 @@ install:
   - yarn install
 script:
   - yarn run test:library
+  - curl -s https://codecov.io/bash | bash
 notifications:
   webhooks:
     on_success: change
