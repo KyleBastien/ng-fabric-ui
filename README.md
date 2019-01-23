@@ -1,6 +1,6 @@
 # ng-fabric-ui
 
-[![CircleCI](https://circleci.com/gh/KyleMcNutt/ng-fabric-ui.svg?style=svg)](https://circleci.com/gh/KyleMcNutt/ng-fabric-ui)
+[![Build Status](https://travis-ci.org/KyleMcNutt/ng-fabric-ui.svg?branch=master)](https://travis-ci.org/KyleMcNutt/ng-fabric-ui)
 [![codecov](https://codecov.io/gh/KyleMcNutt/ng-fabric-ui/branch/master/graph/badge.svg)](https://codecov.io/gh/KyleMcNutt/ng-fabric-ui)
 
 This is an Angular Component library built by re-using the [Fabric UI React Components](https://github.com/OfficeDev/office-ui-fabric-react).
