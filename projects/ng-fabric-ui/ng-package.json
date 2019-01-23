@@ -8,7 +8,15 @@
       "react": "React",
       "react-dom": "ReactDOM",
       "office-ui-fabric-react/lib/Label": "Label",
-      "office-ui-fabric-react/lib/Fabric": "Fabric"
+      "office-ui-fabric-react/lib/Fabric": "Fabric",
+      "office-ui-fabric-react/lib/Spinner": "Spinner"
+    },
+    "umdModuleIds": {
+      "react": "React",
+      "react-dom": "ReactDOM",
+      "office-ui-fabric-react/lib/Label": "Label",
+      "office-ui-fabric-react/lib/Fabric": "Fabric",
+      "office-ui-fabric-react/lib/Spinner": "Spinner"
     }
   }
 }

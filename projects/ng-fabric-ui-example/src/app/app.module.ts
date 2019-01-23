@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FabricLabelModule, FabricSpinnerModule } from 'ng-fabric-ui';
+import { NgModule, Injector } from '@angular/core';
+import { FabricLabelModule, FabricSpinnerModule, FabricLabelComponent, FabricSpinnerComponent } from 'ng-fabric-ui';
 
 import { AppComponent } from './app.component';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,15 @@ import { AppComponent } from './app.component';
     FabricSpinnerModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [FabricLabelComponent, FabricSpinnerComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {
+    const labelEl = createCustomElement(FabricLabelComponent, { injector });
+    customElements.define('fabric-ui-label', labelEl);
+
+    const spinnerEl = createCustomElement(FabricSpinnerComponent, { injector });
+    customElements.define('fabric-ui-spinner', spinnerEl);
+  }
+  ngDoBootstrap() {}
+}
